@@ -1,0 +1,21 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    font-size: 3rem;
+    background-color: black;
+    color: whitesmoke;
+}
+
+h1,p, div.pris {
+    text-align: center;
+}
+
+div.pris {
+    font-size: 5rem;
+}

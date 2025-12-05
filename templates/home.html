@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="sv">
+
+<head>
+    <title>Min Django Sida</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <div class="menu_panel">
+        <ul>
+            <li><a href="/">🏠 | </a></li>
+            <li><a href="about/">ℹ | </a></li>
+            <li><a href="posts/">📝</a></li>
+        </ul>
+    </div>
+    <h1>Min Djangosida</h1>
+    <p>Trist att det inte funkar - Fast nu gör det det.</p>
+    <a href="/about">Om...</a>
+    <a href="/posts">Poster...</a>
+</body>
+</html>
