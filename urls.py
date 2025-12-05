@@ -6,5 +6,5 @@ from mix import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home'),  # <--- Tomma citattecken betyder "startsidan"
-    path('about/', views.about_view, name='about'),
+    path('/about/', views.about_view, name='about'),
 ]

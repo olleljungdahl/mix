@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts list</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}" defer></script>
-</head>
-<body>
-    <H1>Posts list</H1>
-    <p><a href="/">Hem</a> igen</p>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1 class="topheader">Posts list</h1>
+        {% for post in posts %}
+            <article class="post">
+                <h1 class="posttitle">*--> {{ post.title }} <--*</h1>
+                <p>{{ post.date }}</p>
+                <p class="body">{{ post.body }}</p>
+                </article>
+        {% endfor %}
+    </section>
+{% endblock %}

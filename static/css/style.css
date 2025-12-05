@@ -1,21 +1,66 @@
-* {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Basic Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 3rem;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
 
-body {
-    min-height: 100vh;
-    display: grid;
-    font-size: 3rem;
-    background-color: black;
-    color: whitesmoke;
-}
+        p.body {
+            font-size: 1.5rem;
+        }
 
-h1,p, div.pris {
-    text-align: center;
-}
+        h1.posttitle {
+            color: hotpink;
+        }
 
-div.pris {
-    font-size: 5rem;
-}
+        h1.topheader {
+            color: tomato;
+        }
+
+        /* Menu Panel Container */
+        .menu_panel {
+            background-color: #333; /* Dark background */
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky; /* Keeps it at the top if page scrolls */
+            top: 0;
+        }
+
+        /* Remove default list styling and use Flexbox for layout */
+        .menu_panel ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Makes items horizontal */
+            align-items: center;
+        }
+
+        /* List Items */
+        .menu_panel li {
+            /* No specific styles needed here thanks to flex on parent */
+        }
+
+        /* Link Styling */
+        .menu_panel a {
+            display: block; /* Makes the whole area clickable */
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover Effect */
+        .menu_panel a:hover {
+            background-color: #555; /* Lighter grey on hover */
+        }
+
+        /* Dummy content just to show the bar sitting at the top */
+        .content {
+            padding: 20px;
+        }
