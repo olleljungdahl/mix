@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    About
+    Min första app
 {% endblock %}
 
 {% block content %}
@@ -9,8 +9,12 @@
         <h1 class="topheader">Posts list</h1>
         {% for post in posts %}
             <article class="post">
-                <h1 class="posttitle">*--> {{ post.title }} <--*</h1>
-                <p>{{ post.date }}</p>
+                <h1 class="posttitle">
+                    <a href="{% url 'posts:page' slug=post.slug %}">
+                        {{ post.title }}
+                    </a>
+                </h1>
+                <p>{{ post.date|date:"Y-m-d h:m:s" }}</p>
                 <p class="body">{{ post.body }}</p>
                 </article>
         {% endfor %}
