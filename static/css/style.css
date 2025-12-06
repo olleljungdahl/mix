@@ -21,6 +21,14 @@
             color: tomato;
         }
 
+        /* Image in post page */
+        .post_img {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         /* Menu Panel Container */
         .menu_panel {
             background-color: #333; /* Dark background */
