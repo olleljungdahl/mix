@@ -1,24 +1,31 @@
         /* Basic Reset */
         body {
-            margin: 0;
+            margin: 50px;
+            margin-top: 0px;
             padding: 0;
             font-family: sans-serif;
-            font-size: 3rem;
+            font-size: 1rem;
             background-color: black;
             color: white;
-            text-align: center;
+            text-align: left;
         }
 
         p.body {
-            font-size: 1.5rem;
+            font-size: 1rem;
+            text-align: left;
         }
 
         h1.posttitle {
             color: hotpink;
+            text-align: left;
         }
 
         h1.topheader {
             color: tomato;
+        }
+
+        li {
+            font-size: 0.7rem;
         }
 
         /* Image in post page */
