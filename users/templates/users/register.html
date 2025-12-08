@@ -9,7 +9,7 @@
     <section>
         <h1>Registrera ny användare</h1>
 
-        <form class="form-with-validation" action="/users/register/" method="post">
+        <form class="form-with-validation" action="{% url 'users:register%}" method="post">
             {% csrf_token %}
             {{ form }}
             <button type="submit">Registrera</button>

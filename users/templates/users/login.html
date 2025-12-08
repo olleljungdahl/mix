@@ -8,7 +8,11 @@
     <section>
         <h1>Logga in</h1>
 
-        <form class="login-form" action="{% url 'users:login' %}" method="post">
+        <form 
+            class="login-form" 
+            action="{% url 'users:login' %}" 
+            method="post">
+            
             {% csrf_token %}
             {{ form }}
             {%if request.GET.next %}

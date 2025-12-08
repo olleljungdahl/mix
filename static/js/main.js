@@ -1,1 +1,1 @@
-console.log('Detta är gjort med JS')
+console.log('Detta är gjort med static/js/main.js')

@@ -1,0 +1,1 @@
+console.log('Detta är gjort med staticfiles/js/main.js')
