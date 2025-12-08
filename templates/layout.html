@@ -16,8 +16,9 @@
         <ul>
             <li><a href="/">🏠 </a></li>
             <li><a href="/about/">ℹ </a></li>
-            <li><a href=" {% url 'posts:list' %}">📝 </a></li>
-            <li><a href=" {% url 'users:register' %}">🆕 </a></li>
+            <li><a href="{% url 'posts:list' %}">📝 </a></li>
+            <li><a href="{% url 'users:register' %}">🆕 </a></li>
+            <!-- <li><a href="{% url 'users:login' %}" title="Login">🧑‍💻 --</a></li> -->
         </ul>
     </div>
 
