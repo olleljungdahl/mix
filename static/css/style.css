@@ -2,7 +2,7 @@
         body {
             margin: 50px;
             margin-top: 0px;
-            padding: 0;
+            padding: 0px 10px 10px 0px;
             font-family: sans-serif;
             font-size: 1rem;
             background-color: black;
@@ -43,7 +43,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             position: sticky; /* Keeps it at the top if page scrolls */
             top: 0;
-        }
+            }
 
         /* Remove default list styling and use Flexbox for layout */
         .menu_panel ul {

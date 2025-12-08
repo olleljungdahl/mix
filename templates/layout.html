@@ -14,11 +14,19 @@
 <body>
     <div class="menu_panel">
         <ul>
-            <li><a href="/">🏠 </a></li>
-            <li><a href="/about/">ℹ </a></li>
-            <li><a href="{% url 'posts:list' %}">📝 </a></li>
-            <li><a href="{% url 'users:register' %}">🆕 </a></li>
-            <!-- <li><a href="{% url 'users:login' %}" title="Login">🧑‍💻 --</a></li> -->
+            <li><a href="/" title="Hem">🏠 </a></li>
+            <li><a href="/about/" title="Om">ℹ </a></li>
+            <li><a href="{% url 'posts:list' %}" title="Blog">📝 </a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'posts:new-post' %}" title="Nytt inlägg">✏️ </a></li>
+                <form class="logout" method="post" action="{% url 'users:logout' %}">
+                {% csrf_token %}
+                <button type="submit" title="Logout">👋 </button>
+                </form>
+            {% else %}
+                <li><a href="{% url 'users:register' %}" title="Ny användare">🆕 </a></li>
+                <li><a href="{% url 'users:login' %}" title="Logga in">🧑‍💻 </a></li>
+            {% endif %}
         </ul>
     </div>
 

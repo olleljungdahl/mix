@@ -11,6 +11,9 @@
         <form class="login-form" action="{% url 'users:login' %}" method="post">
             {% csrf_token %}
             {{ form }}
+            {%if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
             <button type="submit">Logga in</button>
         </form>
     </section>
