@@ -6,13 +6,38 @@
 
 # Show a post
 {% block content %}
-    <section>
-            <p>Hej</p>
-            <img class="post_img" src="{{ post.banner.url }}" alt="{{ post.title }}"/>
-            <h1 class="posttitle">
-                {{ post.title }}
-            </h1>
-            <p>{{ post.date|date:"Y-m-d h:m:s" }}</p>
-            <p class="body">{{ post.body }}</p>
+    <section class="post-app-shell">
+        <div class="post-screen">
+            <header class="post-screen__topbar">
+                <a class="post-topbar__button" href="{% url 'posts:list' %}" title="Back to posts">
+                    ←
+                </a>
+                <span class="post-topbar__title">Post</span>
+                <button 
+                class="post-topbar__button" 
+                type="button" 
+                aria-label="More options">
+                    •••
+                </button>
+            </header>
+
+            <article class="post-card">
+                <figure class="post-card__banner">
+                    <img class="post_img" src="{{ post.banner.url }}" alt="{{ post.title }}"/>
+                </figure>
+
+                <div class="post-card__body">
+                    <h1 class="posttitle">
+                        {{ post.title }}
+                    </h1>
+                    <p class="post-card__meta">
+                        {{ post.date|date:"Y-m-d H:i" }}
+                    </p>
+                    <div class="post-content">
+                        {{ post.body|linebreaks }}
+                    </div>
+                </div>
+            </article>
+        </div>
     </section>
 {% endblock %}

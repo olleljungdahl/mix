@@ -1,81 +1,222 @@
-        /* Basic Reset */
-        body {
-            margin: 50px;
-            margin-top: 0px;
-            padding: 0px 10px 10px 0px;
-            font-family: sans-serif;
-            font-size: 1rem;
-            background-color: black;
-            color: white;
-            text-align: left;
-        }
+/* Base reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-        p.body {
-            font-size: 1rem;
-            text-align: left;
-        }
+html {
+    font-size: 17px; /* Matches iOS default font size */
+}
 
-        h1.posttitle {
-            color: hotpink;
-            text-align: left;
-        }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    background: radial-gradient(circle at top, #1a1a1a, #050505 45%);
+    color: #f5f5f7;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
-        h1.topheader {
-            color: tomato;
-        }
+main {
+    width: 100%;
+    padding: 0 1rem 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
 
-        li {
-            font-size: 0.7rem;
-        }
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
 
-        /* Image in post page */
-        .post_img {
-            display: block;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        /* Menu Panel Container */
-        .menu_panel {
-            background-color: #333; /* Dark background */
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Keeps it at the top if page scrolls */
-            top: 0;
-            }
+/* Menu Panel Container */
+.menu_panel {
+    width: min(100%, 1200px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+    margin: 0 auto;
+    border-radius: 0 0 24px 24px;
+    background: rgba(10, 10, 10, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: none;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
 
-        /* Remove default list styling and use Flexbox for layout */
-        .menu_panel ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex; /* Makes items horizontal */
-            align-items: center;
-        }
+.menu_panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
 
-        /* List Items */
-        .menu_panel li {
-            /* No specific styles needed here thanks to flex on parent */
-        }
+.menu_panel .logout {
+    margin: 0;
+}
 
-        /* Link Styling */
-        .menu_panel a {
-            display: block; /* Makes the whole area clickable */
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
+.menu_panel a,
+.menu_panel button {
+    display: block;
+    color: inherit;
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: 0.65rem 0.85rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
 
-        /* Hover Effect */
-        .menu_panel a:hover {
-            background-color: #555; /* Lighter grey on hover */
-        }
+.menu_panel a:hover,
+.menu_panel button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
 
-        /* Dummy content just to show the bar sitting at the top */
-        .content {
-            padding: 20px;
-        }
+/* Post page shell mimicking an app */
+.post-app-shell {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 2.5rem;
+}
+
+.post-screen {
+    width: 100%;
+    max-width: 28rem;
+    border-radius: 32px;
+    background: rgba(10, 10, 12, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.post-screen__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.post-topbar__title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.post-topbar__button {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post-card__banner {
+    margin: 0;
+    overflow: hidden;
+}
+
+.post_img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.post-card__body {
+    padding: 0 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.posttitle {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #ff7dd1;
+}
+
+.post-card__meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.post-content {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.92);
+    text-align: left;
+}
+
+.post-content p + p {
+    margin-top: 0.9rem;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 100%;
+        max-width: 960px;
+    }
+
+    .post-app-shell {
+        padding: 2rem 0 3rem;
+    }
+
+    .post-screen {
+        max-width: 56rem;
+        border-radius: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+    }
+
+    .post-screen__topbar {
+        grid-column: 1 / -1;
+    }
+
+    .post-card {
+        flex-direction: row;
+        grid-column: 1 / -1;
+    }
+
+    .post-card__banner,
+    .post-card__body {
+        width: 100%;
+    }
+
+    .post-card__body {
+        padding: 2rem 2.5rem 3rem;
+    }
+}
