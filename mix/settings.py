@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_-^s*wz(k70j2omuzs0b2_vq@&a_8&a0@jskuv&)vuwpqbusbo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.53', 'pi.ljungdahl.com', 'localhost', '*']
+ALLOWED_HOSTS = ['192.168.1.53', 'mix.ljungdahl.com', 'localhost', '*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://mix.ljungdahl.com',
+]
 
 # Application definition
 
