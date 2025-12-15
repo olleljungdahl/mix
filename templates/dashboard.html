@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    mix - Instrumentpanel
+{% endblock %}
+
+{% block content %}
+<div class="robot-dashboard" data-default-speed="48">
+    <div class="dashboard-head">
+        <div class="hero-copy">
+            <p class="eyebrow">Robotbil · Fjärrstyrning</p>
+            <h1>Instrumentpanel</h1>
+            <p>Tre vyer som följer iPhone-design med flytande glas, anpassad för mobil men redo för större skärmar.</p>
+        </div>
+        <button class="glass-button settings-toggle" type="button" aria-expanded="false" aria-controls="dashboard-settings">
+            ⚙️ Inställningar
+        </button>
+    </div>
+
+    <div class="quick-stats">
+        <div class="glass-card stat-card">
+            <p class="label">Status</p>
+            <p class="value">Online · Säker länk</p>
+        </div>
+        <div class="glass-card stat-card">
+            <p class="label">Batteri</p>
+            <p class="value">86 % · 2h 10m</p>
+        </div>
+        <div class="glass-card stat-card">
+            <p class="label">Profil</p>
+            <p class="value">Sport · Stabilisering on</p>
+        </div>
+    </div>
+
+    <section class="glass-card viewport-shell" aria-live="polite">
+        <header class="viewport-header">
+            <div>
+                <p class="label">Vy</p>
+                <p class="value active-view-label">Telemetri</p>
+            </div>
+            <span class="pill">Flytande glas</span>
+        </header>
+
+        <div class="dashboard-view" data-view="telemetry">
+            <div class="telemetry-grid">
+                <div class="analog-gauge">
+                    <div class="gauge-face">
+                        <div class="gauge-mask"></div>
+                        <div class="gauge-needle" role="presentation"></div>
+                        <div class="gauge-center">
+                            <p class="speed-value">48</p>
+                            <p class="speed-unit">km/h</p>
+                        </div>
+                        <div class="gauge-scale">
+                            <span>0</span>
+                            <span>40</span>
+                            <span>80</span>
+                            <span>120</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sensor-stack">
+                    <div class="sensor-row">
+                        <p>IMU Pitch</p>
+                        <span>+2.8°</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>IMU Roll</p>
+                        <span>-1.1°</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>Ultraljud fram</p>
+                        <span>0.8 m</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>Ultraljud bak</p>
+                        <span>1.3 m</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>Vänster hjul</p>
+                        <span>14.8 V</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>Höger hjul</p>
+                        <span>14.6 V</span>
+                    </div>
+                    <div class="sensor-row">
+                        <p>CPU &amp; radio</p>
+                        <span>44 °C · 5.8 GHz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-view" data-view="map" hidden>
+            <div class="map-shell">
+                <div class="map-viewport">
+                    <div class="map-grid"></div>
+                    <div class="vehicle-indicator">
+                        <div class="vehicle-heading"></div>
+                    </div>
+                    <div class="route-chip">Planerad rutt · 120 m</div>
+                </div>
+                <div class="gps-panel">
+                    <div>
+                        <p class="label">Lat / Lon</p>
+                        <p class="value">57.7089 / 11.9746</p>
+                    </div>
+                    <div>
+                        <p class="label">Höjd</p>
+                        <p class="value">42 m</p>
+                    </div>
+                    <div>
+                        <p class="label">Noggrannhet</p>
+                        <p class="value">±0.6 m</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-view" data-view="controls" hidden>
+            <div class="control-grid">
+                <div class="joystick">
+                    <div class="joystick-bg"></div>
+                    <div class="joystick-knob" aria-label="Vänster styrspak"></div>
+                    <p class="label">Rikta / yaw</p>
+                </div>
+                <div class="joystick">
+                    <div class="joystick-bg"></div>
+                    <div class="joystick-knob" aria-label="Höger styrspak"></div>
+                    <p class="label">Gas / pitch</p>
+                </div>
+            </div>
+            <div class="control-actions">
+                <button class="glass-button">Nödstopp</button>
+                <button class="glass-button">Auto-follow</button>
+                <button class="glass-button">Return-to-start</button>
+            </div>
+        </div>
+
+        <div class="view-switcher" role="tablist" aria-label="Välj panel">
+            <button class="switcher-btn is-active" data-target="telemetry" role="tab" aria-selected="true">Telemetri</button>
+            <button class="switcher-btn" data-target="map" role="tab">Karta</button>
+            <button class="switcher-btn" data-target="controls" role="tab">Kontroller</button>
+        </div>
+    </section>
+
+    <section class="glass-card settings-panel" id="dashboard-settings" hidden>
+        <header class="settings-header">
+            <div>
+                <p class="label">Tema</p>
+                <p class="value">Mörkt, ljust eller systemstandard</p>
+            </div>
+            <span class="pill">iOS-inspirerat</span>
+        </header>
+        <div class="settings-options">
+            <label class="radio-tile">
+                <input type="radio" name="theme-mode" value="system" checked>
+                <div class="radio-ui">
+                    <p class="value">System</p>
+                    <p class="label">Följer telefonens val</p>
+                </div>
+            </label>
+            <label class="radio-tile">
+                <input type="radio" name="theme-mode" value="dark">
+                <div class="radio-ui">
+                    <p class="value">Mörkt</p>
+                    <p class="label">Flytande glas</p>
+                </div>
+            </label>
+            <label class="radio-tile">
+                <input type="radio" name="theme-mode" value="light">
+                <div class="radio-ui">
+                    <p class="value">Ljust</p>
+                    <p class="label">Mjuka kontraster</p>
+                </div>
+            </label>
+        </div>
+    </section>
+</div>
+{% endblock %}
